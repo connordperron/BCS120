@@ -1,0 +1,4 @@
+Create a function named alpha that takes in a string name and outputs "It is a pleasure to meet you name". Show how this works in main.
+Create a function named bravo that takes in five numbers and returns the average of them. Show how this works in main.
+Create a function named charlie that takes in an age and checks that the age is between 1 and 100. If it is not, it changes age to 0 and returns 0, if it is then it returns the age. Show how this works in main.
+EXTRA CREDIT: Create a function named delta that takes in x and y and returns the total  from  from x to y . Show how this is used in main.

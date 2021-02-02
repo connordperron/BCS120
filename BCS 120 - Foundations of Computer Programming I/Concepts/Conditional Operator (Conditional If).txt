@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+	int num = 3;
+	cout << (num % 2 == 0 ? "even" : "odd") << endl;
+
+
+	int day = 3;
+	cout << (day == 1 ? "M" : day == 2 ? "T" : day == 3 ? "W" : "R");
+}

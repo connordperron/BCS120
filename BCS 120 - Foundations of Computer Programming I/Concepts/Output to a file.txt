@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <time.h>
+using namespace std;
+
+
+int main()
+{
+	
+	srand(time(NULL));
+
+	ofstream output;
+	output.open("The File.txt");
+	output << (rand() % 6 + 1) << endl;
+	output.close();
+
+
+
+}

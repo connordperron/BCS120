@@ -1,0 +1,71 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	cout << "-------------------------------" << endl;
+	srand(time(NULL));
+	int counter = 0;
+	while (counter < 10)
+	{
+		cout << rand() % 100 << endl;
+		counter++;
+	}
+
+	cout << "-------------------------------" << endl;
+	counter = 1;
+	while (counter <= 10)
+	{
+		cout << counter << endl;
+		counter++;
+	}
+
+	cout << "-------------------------------" << endl;
+	counter = 10;
+	while (counter >= 1)
+	{
+		cout << counter << endl;
+		counter--;
+	}
+
+	cout << "-------------------------------" << endl;
+	counter = 1;
+	while (counter <= 10)
+	{
+		cout << 10 - counter + 1<< endl;
+		counter++;
+	}
+
+	cout << "-------------------------------" << endl;
+	int i = 0, j = 0;
+	while (i <= 10)
+	{
+		j = 0;
+		while (j < 10)
+		{
+			cout << "* ";
+			j++;
+		}
+		cout << endl;
+		i++;
+	}
+
+	cout << "-------------------------------" << endl;
+	int num = 483921;
+	while (num > 0)
+	{
+		cout << num % 10 << endl;
+		num = num / 10;
+	}
+
+	cout << "-------------------------------" << endl;
+
+}

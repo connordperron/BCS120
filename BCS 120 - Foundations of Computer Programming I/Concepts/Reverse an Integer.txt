@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	int num = 47321;
+	cout << num << " backwards is ";
+	while (num > 0)
+	{
+		cout << num % 10;
+		num = num / 10;
+	}
+
+
+}

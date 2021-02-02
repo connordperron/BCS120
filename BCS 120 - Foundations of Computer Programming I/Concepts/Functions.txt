@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+
+using namespace std;
+
+
+void func3(int start, int end, int power);
+double getRandomNumber(int type);
+void outer();
+void inner();
+
+int main()
+{
+    int a = 10, b = 25;
+    double c = 1 / 3.0;
+    func3(a, b, c);
+    for (int i = 0; i < 10; i++)
+    {
+        cout << getRandomNumber(1) << endl;
+    }
+
+    cout << "In main \n";
+        outer();
+    cout << "In main \n";
+}
+
+
+    void outer()
+    {
+        cout << "This is the outer function \n";
+        inner();
+        cout << "This is the outer function \n";
+    }
+
+    void inner()
+    {
+        cout << "This is the inner function \n";
+    }
+
+
+
+    void func3(int start, int end, int power)
+    {
+        for (int i = start; i <= end; i++)
+            cout << pow(i, power) << endl;
+    }
+
+    double getRandomNumber(int type)
+    {
+        if (type == 1)
+        {
+            return rand() % 10000;
+        }
+
+        else if (type == 2)
+        {
+            return (rand() % 10000) / 10000.0;
+        }
+    }

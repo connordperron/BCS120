@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+	int age;
+	double fixedAge;
+
+	cout << "What is your age? \n";
+	cin >> age;
+	// Age is casted as a double so the math works out
+	fixedAge = (double)age * 365 * 24 * 60 * 60;
+	cout << "You are " << fixedAge << " seconds old. \n" ;
+
+
+
+	char letter1 = 'a', letter2 = 'b';
+	char letter3 = letter1 + letter2;
+
+	cout << letter3 << endl;
+	cout << letter1 + 5 << endl;
+	cout << char(letter1 + 5) << endl;
+}

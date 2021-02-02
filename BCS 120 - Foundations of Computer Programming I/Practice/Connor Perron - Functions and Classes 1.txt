@@ -1,0 +1,433 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+#include "Rectangle.h"
+#include "Paper.h"
+
+using namespace std;
+
+void whileCounter();
+void intCounter();
+int topBottom(int top, int bottom);
+int average(int k);
+void squares();
+void whileCounter2();
+void twinPrimes();
+bool isPrime(int val);
+void colors();
+int random(int top, int bottom);
+void age();
+void guests(int count);
+void guessingGame();
+
+int main()
+{
+	//whileCounter();
+
+	//intCounter();
+
+	//topBottom(0, 10);
+
+	//average(5);
+
+	//squares();
+
+	//whileCounter2();
+
+	twinPrimes();
+
+	//colors();
+	
+	//random(0, 10);
+
+	//age();
+
+	//guests(3);
+
+	//guessingGame();
+
+	Rectangle r(3, 10);
+	Paper p();
+
+	cout << r.getLength() << endl;
+
+}
+
+//1. Create a function that outputs the numbers - 25 to 25 (use a while loop for this)
+void whileCounter()
+{
+	int num = -25;
+	while (num <= 25)
+	{
+		cout << num << ", ";;
+		num++;
+	}
+	cout << endl;
+}
+
+//2. Create a function that outputs the numbers - 10 to 10 (use a for loop for this)
+void intCounter()
+{
+	for (int num = -25; num <= 25; num++)
+	{
+		cout << num << ", ";
+	}
+	cout << endl;
+}
+
+//3. Create a function that takes in top and bottomand outputs the total of the even numbers between topand bottom.
+int topBottom(int bottom, int top)
+{
+	int counter = 0;
+	for (bottom; bottom <= top; bottom++)
+	{
+		if (bottom % 2 == 0)
+		{
+			counter++;
+		}
+	}
+	cout << counter << endl;
+	return counter;
+}
+
+//4. Create a function that takes in a number kand then use a for loop to ask the user for k different numbers.Return the average of those numbers.
+int average(int k)
+{
+	int total = 0, average = 0, num =0;
+	for (int x = 0; x < k; x++)
+	{
+		cout << "Please enter a number." << endl;
+		cin >> num;
+		total = total + num;
+	}
+	average = total / k;
+	cout << average << endl;
+	return average;
+}
+
+//5. Create a function that uses a while loop to output all the numbers between 1 and 100 that are squares(e.g. 0, 1, 4, 9, etc)
+void squares()
+{
+	for (int x = 1; x <= 100; x++)
+	{
+		if (sqrt(x) == (int)sqrt(x))
+		{
+			cout << x << ", ";
+		}
+	}
+	cout << endl;
+}
+
+//6. Create a function that uses a while loop to output the numbers from 20 to - 10, counting backwards
+void whileCounter2()
+{
+	int ctr = 20;
+	while (ctr >= -10)
+	{
+		cout << ctr << ", ";
+		ctr--;
+	}
+	cout << endl;
+}
+//7. Create a function to output all twin primes less than 1000. E.g. 5, 7 11, 13 17, 19 etc.
+void twinPrimes()
+{
+	for (int x = 1; x < 1000; x++)
+	{
+		if (isPrime(x) && isPrime(x+2))
+		{
+			cout << "("<< x << ", " << x+2 << "), ";
+		}
+	}
+	cout << endl;
+}
+
+bool isPrime(int val)
+{
+	for (int div = 2; div < val; div++)
+	{
+		if (val % div == 0)
+		{
+			return false;
+		}
+
+	}
+	return true;
+
+}
+
+//8. Ask the user for a color.If they choose "red", use a while loop to output "red" 5 times.If they choose "green", output "green" seven times with a for loop.If they choose anything else, tell them to choose a better color.
+void colors()
+{
+	string choice = "";
+	cout << "Please choose a color. " << endl;
+	cin >> choice;
+
+	if (choice == "red" || choice == "Red" || choice == "RED")
+	{
+		int x = 0;
+		while (x < 5)
+		{
+			cout << choice << ", ";
+			x++;
+		}
+	}
+
+	else if (choice == "green" || choice == "Green" || choice == "GREEN")
+	{
+		for (int x = 0; x < 7; x++)
+			cout << choice << ", ";
+	}
+
+	else
+	{
+		colors();
+	}
+}
+//9. Create a function that takes in topand bottom.You should return a random number between top and bottom.
+int random(int bottom, int top)
+{
+	int random = (rand() % top) + bottom;
+	cout << random << endl;
+	return random;
+}
+
+//10. Create a function that asks the user for their age.Use a while loop to ensure they give you a number between 20 and 50
+void age()
+{
+	int yourage = 1;
+	while (yourage > 0)
+	{
+		cout << "What is your age?" << endl;
+		cin >> yourage;
+		if (yourage >= 20 && yourage <= 50)
+			break;
+	}
+
+}
+
+//11. Create a function that takes in number of guests.Ask the user to name of each guest and output "hello guest" with their name.
+void guests(int count)
+{
+	for (int x = 1; x <= count; x++)
+	{
+		string g = "";
+		cout << "What is guest #" << x << "'s name?" << endl;
+		cin >> g;
+		cout << "Hello " << g << endl;
+	}
+}
+
+//12. Ask the user to pick a number between 1 and 100. You(the program) should try and guess the number the user picked.The user can tell you if their number is higher or lower, but that is all.The program should run until the computer guesses correctly.
+void guessingGame()
+{
+	srand(time(nullptr));
+	int guess = -1;
+	int randomNum = (rand() % 100) + 1;
+
+	cout << "Guess the random number between 1 and 100!" << endl;
+	cin >> guess;
+
+	while (guess != randomNum)
+	{
+		if (randomNum > guess)
+		{
+			cout << "Too Low! Guess again." << endl;
+			cin >> guess;
+		}
+
+		else if (randomNum < guess)
+		{
+			cout << "Too High! Guess again." << endl;
+			cin >> guess;
+		}
+	}
+}
+============================================================================================================================================================================================================================================
+//13. Create a class for Rectangle
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Rectangle
+{
+private:
+	double length, width;
+
+public:
+	Rectangle() {
+		length = width = 1;
+	}
+
+	Rectangle(double length, double width)
+	{
+		this->length = length;
+		this->width = width;
+	}
+
+	void setLength(double length)
+	{
+		this->length = length;
+	}
+
+	void setWidth(double width)
+	{
+		this->width = width;
+	}
+
+	double getLength()
+	{
+		return length;
+	}
+
+	double getWidth()
+	{
+		return width;
+	}
+
+};
+
+============================================================================================================================================================================================================================================
+//14. Create a class for a Student.
+#pragma once
+#include <iostream>
+#include <string>
+
+using namespace std;
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student
+{
+private:
+	string firstName, lastName, major;
+
+	double gpa;
+
+	int graduatingYear;
+
+public:
+	Student() {
+		firstName = lastName = major = "Placeholder";
+		gpa = 0.0;
+		graduatingYear = 0;
+	}
+
+	Student(string firstName, string lastName, string major, double gpa, int graduatingYear)
+	{
+		this->firstName = firstName;
+		this->lastName = lastName;
+		this->major = major;
+		this->gpa = gpa;
+		this->graduatingYear = graduatingYear;
+	}
+
+	void setFirstName(string firstName)
+	{
+		this->firstName = firstName;
+	}
+
+	void setLastName(string lastName)
+	{
+		this->lastName = lastName;
+	}
+
+	void setMajor(string major)
+	{
+		this->major = major;
+	}
+
+	void setGPA(double gpa)
+	{
+		this->gpa = gpa;
+	}
+
+	void setGraduatingYear(int graduatingYear)
+	{
+		this->graduatingYear = graduatingYear;
+	}
+
+	string getFirstName()
+	{
+		return firstName;
+	}
+
+	string getLastName()
+	{
+		return lastName;
+	}
+
+	string getMajor()
+	{
+		return major;
+	}
+
+	double getGPA()
+	{
+		return gpa;
+	}
+
+	int getGraduatingYear()
+	{
+		return graduatingYear;
+	}
+
+};
+
+============================================================================================================================================================================================================================================
+//15. Create a class for Paper, using Rectangle.
+#pragma once
+#include "Rectangle.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Paper {
+private:
+	string color;
+	Rectangle size;
+
+public:
+	Paper()
+	{
+		color = "White";
+		size = Rectangle(8, 11);
+	}
+
+	void setColor(string color)
+	{
+		this->color = color;
+	}
+
+	void setLength(int length)
+	{
+		this->size = Rectangle(length, size.getWidth());
+	}
+
+	void setWidth(int width)
+	{
+		this->size = Rectangle(size.getLength(), width);
+	}
+
+	string getColor()
+	{
+		return color;
+	}
+
+	double getLength()
+	{
+		return size.getLength();
+	}
+
+	double getWidth()
+	{
+		return size.getWidth();
+	}
+
+};

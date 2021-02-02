@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+	string day = "";
+	int time;
+	cout << "What day and time is your appointment \n";
+	cin >> day;
+	cin >> time;
+
+
+
+	if ((day == "Monday" || day =="Tuesday") && time == 8)
+	{
+		cout << "Welcome to your appointment \n";
+	}
+
+	else if (time == 8)
+	{
+		cout << "You came the wrong day";
+	}
+
+	else if (day == "Monday" || day == "Tuesday")
+	{
+		cout << "You came the wrong time";
+	}
+
+	else
+	{
+		cout << "You came at the wrong day and the wrong time";
+	}
+
+
+}

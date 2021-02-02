@@ -1,0 +1,12 @@
+	int val = 17;
+	bool isPrime = true;
+	for (int div = 2; div < val; div++)
+	{
+		if (val % div == 0)
+		{
+			isPrime = false;
+			break;
+		}
+	}
+	cout << val << " is ";
+	cout << (isPrime ? "prime." : "not prime.") << endl;

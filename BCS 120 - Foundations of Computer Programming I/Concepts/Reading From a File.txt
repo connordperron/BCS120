@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    ofstream output;
+    output.open("Friends.txt");
+    string name;
+    for (int fcount = 0; fcount < 7; fcount++)
+    {
+        cout << "What is your friend's name?" << endl;
+        cin >> name;
+        output << name << endl;
+    }
+    output.close();
+
+
+
+    ifstream input;
+    input.open("Friends.txt");
+    string names;
+    for (int fcount = 0; fcount < 7; fcount++)
+    {
+        input >> names;
+        cout << names << endl;
+    }
+    input.close();
+}

@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+
+void addTwo(int& x);
+
+int main()
+{
+	int val = 7;
+	addTwo(val);
+	cout << val << endl;
+}
+
+//Pass by reference, refers to original address
+void addTwo(int& x)
+{
+	x += 2;
+}
+
+//Pass by value, makes a copy
+int addTwoReturn(int x)
+{
+	return x + 2;
+}

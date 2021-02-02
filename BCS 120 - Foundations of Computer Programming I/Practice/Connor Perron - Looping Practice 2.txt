@@ -1,0 +1,56 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    //Gilliam has seven friends.Create a loop that outputs his friends(A, B, C, D, E, F, G) to a file.
+    ofstream output;
+    output.open("Friends.txt");
+    string name;
+    for (int fcount = 0; fcount < 7; fcount++)
+    {
+        cout << "What is your friend's name?" << endl;
+        cin >> name;
+        output << name << endl;
+    }
+    output.close();
+    cout << endl;
+
+
+    //Create a loop that reads his friends from a file and outputs their names to the console.
+    ifstream input;
+    input.open("Friends.txt");
+    string names;
+    while (input >> names)
+     {
+        cout << names << endl;
+     }
+    input.close();
+    cout << endl;
+
+    //Output all the number pairs from 1 to 10. (i.e. (1, 1) (1, 2)... (2, 2) (2, 3)... (3, 3) (3, 4)...
+    for (int num1 = 1; num1 <= 10; num1++)
+    {
+        for (int num2 = 0; num2 <= 10; num2++)
+        {
+            cout << "(" << num1 << ", " << num2 << ")" << ", ";
+        }
+    }
+    cout << endl;
+
+    //Output all the number sums from 1 to 10[use the previous problem to do this by just adding each number pair from before]
+    for (int num1 = 1; num1 <= 10; num1++)
+    {
+        for (int num2 = 0; num2 <= 10; num2++)
+        {
+            cout << num1 << "+"<< num2 << " = " <<num1 + num2 << endl;
+        }
+    }
+
+
+}
+
+

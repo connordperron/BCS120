@@ -1,0 +1,320 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+void Alpha(int top);
+int Bravo();
+int Delta();
+void Echo();
+double Foxtrot(double number);
+int Golf();
+int Hotel();
+bool India(int tester);
+bool India(double tester);
+void Lima(string& name, int& age);
+void November(int grade);
+
+static int PAY_RATE = 50;
+
+int main()
+{
+	Alpha(10);
+	cout << endl;
+	cout << Bravo();
+	cout << endl;
+	cout << Delta();
+	Echo();
+	cout << endl;
+	for (int x = 0; x < 11; x++)
+	{
+		if (x == 0)
+		{
+			cout << "2^0 = 1" << endl;
+		}
+
+		else
+		cout << "2^"<< x << " = "<<Foxtrot(pow(2, x - 1)) << endl;
+	}
+
+//6. Ask the user for their favorite color.Create a variable named color to store it.If they choose blue, output "Great choice."; if they choose red, output "Poor choice"; if they choose green, output "Not a bad choice."; if they choose anything else, say "Sorry, that's not a primary color." (Use an if / else - if / else statement).
+	string color = "";
+	cout << "What is your favorite color?" << endl;
+	cin >> color;
+
+	if (color == "blue")
+		cout << "Great Choice!" << endl;
+
+	else if (color == "red")
+		cout << "Poor Choice!" << endl;
+
+	else if (color == "green")
+		cout << "Not a bad choice." << endl;
+
+	else
+		cout << "Sorry, that is not a primary color" << endl;
+
+//7. Do the same as above but with a switch statement.Label the choices 1.) blue, 2.) red, 3.) green.
+	int clr;
+	cout << "What is your favorite color? \n 1. blue \n 2. red \n 3. green" << endl;
+	cin >> clr;
+
+	switch (clr)
+	{
+	case 1:
+	{
+		cout << "Great Choice!" << endl;
+		break;
+	}
+	case 2:
+	{
+		cout << "Poor Choice!" << endl;
+		break;
+	}
+	case 3:
+	{
+		cout << "Not a bad choice." << endl;
+		break;
+	}
+	default:
+	{
+		cout << "Sorry, that is not a primary color" << endl;
+		break;
+	}
+	}
+
+
+//8. Create a random number between 1 and 100.  If it is less than 50 output "you chose a number less than 50." If it is more than 50, output "you chose a number more than 50."
+	srand(time(NULL));
+	int randNum = (rand() % 100 + 1);
+
+	if (randNum < 50)
+	{
+		cout << "You chose a number less than 50." << endl;
+	}
+	else if (randNum > 50)
+	{
+		cout << "You chose a number more than 50." << endl;
+	}
+
+
+
+
+
+	cout << "It took "<<Hotel() << " Tries. "<< endl;
+
+	int testerInt = 4;
+	double testerDouble = 4.0;
+
+	if (India(testerInt))
+		cout <<testerInt << " is even" << endl;	
+
+	else
+		cout << testerInt << " is odd" << endl;
+	
+	if (India(testerDouble))
+		cout << testerDouble << " is even" << endl;
+
+	else
+		cout << testerDouble << " is odd" << endl;
+
+
+
+	//11. Use the conditional operator (sometimes called the ternary operator) for this problem.PAY_RATE is a global constantand is 50. Let the user put in their HOURS_WORKED. if the hours worked is greater than 10, output to the console the pay(pay_rate * hours_worked) otherwise output 0
+	int HOURS_WORKED;
+	cout << "How many hours did you work?" << endl;
+	cin >> HOURS_WORKED;
+
+	cout << (HOURS_WORKED > 10 ? (HOURS_WORKED * PAY_RATE) : 0) << endl;
+
+	int age;
+	string name;
+	Lima(name, age);
+
+//13. Use a for loop to list Celsiusand Fahrenheit temperatures.The "C" should be from - 20 to 20 and the F should be shown correspondingly(F = (9 / 5) * C + 32).
+	for (int c = -20; c <= 20; c++)
+	{
+		double f = ((9.0 / 5.0) * c) + 32.0;
+		cout << "Celsius: " << c << "  Farenheit: " << f << endl;
+	}
+
+//14. The Fibonacci sequence is : 1, 1, 2, 3, 5, 8, 13, 21, etc.Use a for loop to list the first 20 Fibonacci numbers.
+	int num1 = 0, num2 = 1, num3;
+	cout << num1 << ", " << num2 << ", ";
+
+	for (int i = 0; i < 20; i++)
+	{
+		num3 = num1 + num2;
+		cout << num3 << ", ";
+
+		num1 = num2;
+		num2 = num3;
+	}
+
+	cout << endl;
+	November(85);
+
+}
+
+//1. Create a void function called Alpha that takes in numberand uses a while loop to count from 1 to number, inclusive.The function should output each number it counts to the console.
+void Alpha(int top)
+{
+	int counter = 1;
+	while (counter <= top)
+	{
+		cout << counter<< ", ";
+		counter++;
+	}
+
+}
+
+//2. Create a function called Bravo that returns the total of the numbers 1 through 10. Use a for loop in the function to do this.
+int Bravo()
+{
+	int total = 0;
+	for (int x = 1; x <= 10; x++)
+	{
+		total = total + x;
+	}
+	return total;
+}
+
+
+//3. Create a function called Delta that uses a while loop to ask the user for their age until they give an age between 0 and 100, inclusive.The function should return the variable age to main.Show how it is called in main.
+int Delta()
+{
+	int age = -1;
+
+	while (age < 0 || age > 100)
+	{
+		cout << "How old are you?" << endl;
+		cin >> age;
+		if (age >= 0 && age <= 100)
+			break;
+	}
+
+	return age;
+}
+
+
+//4. Create a function called Echo that outputs 20 random numbers to a file called theFile.txt
+void Echo()
+{
+	srand(time(NULL));
+
+	ofstream output;
+	output.open("EchoFunction.txt");
+	for(int x = 0; x < 20; x++)
+		output << (rand() % 100 + 1) << endl;
+	output.close();
+}
+
+
+//5. Create a function called Foxtrot that takes in a double number and returns number * 2. Use this function in main to output the powers of 2 from 2 ^ 0 through 2 ^ 10.
+double Foxtrot(double number)
+{
+	return number * 2;
+}
+
+
+//9. Create a function called Golf that returns a random number between 1 and 6.  Create a function called Hotel that uses Golf to simulate rolling two die.Hotel should have a counter keeping track of how long it takes to get the same output for each roll(e.g.both dice return a 1).Hotel should output how many turns it took to get the same output for each roll.
+int Golf()
+{
+	return (rand() % 6 + 1);
+}
+
+int Hotel()
+{
+	int counter = 0;
+	int roll1 = 0, roll2 = 1;
+	while (roll1 != roll2)
+	{
+		roll1 = Golf();
+		roll2 = Golf();
+		counter++;
+
+		if (roll1 == roll2)
+		{
+			break;
+		}
+
+	}
+	return counter;
+}
+
+
+//10. Create a function called India that takes in int numberand return true for even and false for odd.Overload a second function to deal with doubles; it should take in double numberand cast it.Show in main the implementation of both functions.
+bool India(int tester)
+{
+	if (tester % 2 == 0)
+		return true;
+
+	else
+		return false;
+}
+
+bool India(double tester)
+{
+	if ((int)tester % 2 == 0)
+		return true;
+
+	else
+		return false;
+}
+
+
+//12. Create a function called Lima.It should take in the variable name and age as references.It should ask the user for their nameand age.The user is allowed three tries to correctly give an age between 0 and 100, inclusive, otherwise age will automatically be set to 0.
+void Lima(string& name, int& age)
+{
+	cout << "What is your name?" << endl;
+	cin >> name;
+
+	int tries = 0;
+	while (tries < 3)
+	{
+		cout << "What is your age? " << endl;
+		cin >> age;
+
+		if (age >= 0 && age <= 100)
+		{
+			break;
+		}
+
+		tries++;
+
+		age = 0;
+	}
+
+	cout << name << " is " << age << endl;
+}
+
+
+
+//15. Create a function called November that takes in an int grade.If grade is between 90 and 100 it should output “You got an A”.If grade is between 80 and 89 it should output “You got a B”.If grade is between 70 and 79 it should output “You got a C”.If grade is lower than 70 it should output, “You did not pass”.
+void November(int grade)
+{
+	if (grade >= 90 && grade <= 100)
+	{
+		cout << "You got an A." << endl;
+	}
+
+	else if (grade >= 80 && grade <= 89)
+	{
+		cout << "You got a B." << endl;
+	}
+
+	else if (grade >= 70 && grade <= 79)
+	{
+		cout << "You got a C." << endl;
+	}
+
+	else if (grade < 70)
+	{
+		cout << "You failed." << endl;
+	}
+
+}

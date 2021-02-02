@@ -1,0 +1,68 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+//1. Create a while loop that counts from 10 to - 10 using a function named Alpha(it should be a void).
+void alpha()
+{
+	int a = 10;
+	while (a > -11)
+	{
+		cout << a << ", ";
+		a--;
+	}
+}
+//2. Create a for loop that outputs the cube root of the numbers 5 to 20 inside a function named Beta(it should be a void).
+void beta()
+{
+	double b = 5.0;
+	for (b; b <= 20; b++)
+	{
+		cout << cbrt(b) << ", ";
+	}
+}
+//3. Create a for loop that outputs 20 random numbers between 0 and 1 inside a function named Gamma(it should be a void) .
+void gamma()
+{
+	srand(time(NULL));
+	for (int x = 0; x < 20; x++)
+	{
+		double g = (rand() % 100)+1.0;
+		g /= 100;
+		cout << g << ",";
+	}
+}
+//4. Use a while loop to ask the user for their age until they give an age between 0 and 100 inside a function named Delta(it should return the age).
+int delta()
+{
+	bool loop = true;
+	int age = -1;
+	while (loop)
+	{
+		cout << "What is your age?" << endl;
+		cin >> age;
+
+		if (age < 100 && age > 1)
+		{
+			return age;
+			break;
+		}
+	
+	}
+}
+
+int main()
+{
+	alpha();
+	cout << endl;
+	beta();
+	cout << endl;
+	gamma();
+	cout << endl;
+	cout << "You are " << delta();
+}

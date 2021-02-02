@@ -1,0 +1,22 @@
+Ask the user for their favorite number from 1 to 100. If the number is between 2 and 13 say "Nice". If it is between 21 and 84 say "Not bad." if it is between 85 and 99 say "Great". If it is anything else say "Too bad." (Use an if/else-if/else statement).
+Create a random number between 1 and 200.  Ask the user for a number between the same range. If the numbers are the same then say "Shrubbery", if not say "Piccadilly".
+Create a random number between 1 and 6. If it is 1,3 or 5 say "Amazing", if it is 2,4 or 6 say "Wonderful"
+Ask the user for LowNumber and HighNumber. Add up all the numbers between LowNumber and HighNumber inclusive. Output the result to the console.
+Give the user three chances to tell us their age (which must be between 1 and 100 inclusive). If they fail to do this, output “Fail”. If they are successful, output “Success”.
+Ask the user for a number and output “Even” or “Odd”, depending on what it is.
+Ask the user for a negative number. Give them a second chance if they don't give you a negative number. Output to the screen the same number as a positive number
+Ask the user for the length and width of two rectangles. Tell the user the area of the rectangle with the lesser width.
+Ask the user for num1 and num2. Output num3 as the sum of num1 and num2.  Continue to output the next number in the pattern for 10 numbers. E.g. If the user says 5 and 7. Then output 5,7,12,19,31,...
+Use a loop to output all the squares (i.e. 1,4, 9, 16, etc) up until 196 to the console
+There are two types of soda, type A and type B. Each type has two colors: orange or black.  Here are the costs: 
+A, black $1.50
+
+A, orange $2.14
+
+B, black $.75
+
+B, orange $1.25
+
+ 
+
+Find out what the user chooses and how many. There is a 5% discount for ordering more than 10 sodas. Output the total order cost with a tax of 7.5%. 

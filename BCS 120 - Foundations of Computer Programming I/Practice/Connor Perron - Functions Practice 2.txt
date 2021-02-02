@@ -1,0 +1,177 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+void age();
+void adding();
+void userInfo(string& name, string& plate);
+bool evenOdd(int num);
+double purchasing(double price, int quantity);
+void guessing();
+void box(int size);
+void listPrimes(int num);
+bool goesIntoNumberBelow(int num);
+void ALICE();
+void BOB();
+void addTwo(int& x);
+
+int main()
+{
+    age();
+    adding();
+    string name, plate;
+    userInfo(name, plate);
+    cout << name << "\t" << plate << endl;
+    cout << evenOdd(12) << endl;
+    cout << purchasing(10.00, 5) << endl;
+    guessing();
+    box(9);
+    listPrimes(7);
+    ALICE();
+    addTwo(10);
+}
+
+// 1. Create a while loop that asks for a person's age and only accepts an age between 1 and 100.
+void age()
+{
+    bool loop = true;
+    int age = -1;
+    while (loop)
+    {
+        cout << "What is your age?" << endl;
+        cin >> age;
+
+        if (age < 100 && age > 1)
+        {
+            break;
+        }
+
+    }
+}
+
+// 2. Create a for loop that adds together all the numbers from 1 to 10.
+void adding()
+{
+    int total = 0;
+    for (int x = 1; x <= 10; x++)
+    {
+        total += x;
+    }
+    cout << total << endl;
+}
+
+// 3. Create a void function that asks for a users name and license plate and outputs the information to main using pass by reference.
+void userInfo(string& name, string& plate)
+{
+    cout << "What is your name?" << endl;
+    cin >> name;
+    cout << "What is your license plate?" << endl;
+    cin >> plate;
+}
+
+
+// 4. Create a boolean function that takes in a number and outputs true if it is even and false if it is odd.
+bool evenOdd(int num)
+{
+    bool even = false;
+    if (num % 2 == 0)
+        even = true;
+
+    return even;
+}
+
+// 5. Create a double function that takes in a price and quantity. If quantity is between 0 and 10 there is a 10% discount, if quantity is between 11 and 20 there is a 15% discount, if quantity is greater than 20 there is a 20% discount. Return the price with the discount factored in.
+double purchasing(double price, int quantity)
+{
+    if (quantity >= 0 && quantity <= 10)
+        return (price * quantity) * .9;
+
+    else if (quantity >= 11 && quantity <= 20)
+        return (price * quantity) * .85;
+
+    if (quantity > 20)
+        return (price * quantity) * .8;
+}
+// 6. Create a random number between 0 and 99. Use a while loop to let the computer guess the random number. The user should tell the computer if the guess is HIGH of LOW and the computer should adjust accordingly, until it figures out the number.
+void guessing()
+{
+    srand(time(nullptr));
+    int upper = 99, lower = 0;
+    int guess = (rand() % upper) + lower;
+    int randomNumber = (rand() % 100);
+    string ans;
+
+    while (guess != randomNumber)
+    {
+        cout << "Is " << guess << " higher or lower than " << randomNumber << "?" << endl;
+        cin >> ans;
+
+        if (ans == "higher")
+        {
+            upper = guess;
+            guess = (rand() % upper)+lower;
+        }
+        else if (ans == "lower")
+        {
+            lower = guess;
+            guess = (rand() % upper) + lower;
+        }
+    }
+}
+
+// 7. Create a function that takes in a number and outputs a box of stars of that size.
+void box(int size)
+{
+    for (int x = 0; x < size; x++)
+    {
+
+        for (int x = 0; x < size; x++)
+        {
+            cout << "*" << " ";
+        }
+        cout << endl;
+    }
+}
+
+// 8. Create a function that takes in a number and outputs all the primes up until and including that number.
+void listPrimes(int num)
+{
+    for (int x = 2; x <= num; x++)
+    {
+        if (!goesIntoNumberBelow(x))
+            cout << x << endl;
+    }
+}
+bool goesIntoNumberBelow(int num)
+{
+    for (int x = 2; x < num; x++)
+    {
+        if (num % x == 0)
+            return true;
+    }
+	return false;
+}
+
+
+// 9. Create a function named ALICE that calls another named BOB. Each function should say it's name when it is called.
+void ALICE()
+{
+    cout << "This is function ALICE" << endl;
+    BOB();
+}
+void BOB()
+{
+    cout << "This is function BOB" << endl;
+}
+
+// 10. Create a function that takes in X and adds 2 to it using pass by reference.
+void addTwo(int& x)
+{
+    cout << x <<"+2 = ";
+    x += 2;
+    cout << x << endl;
+}

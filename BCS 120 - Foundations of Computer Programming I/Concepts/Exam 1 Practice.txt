@@ -1,0 +1,130 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{ 
+	// Outputs ASCII characters from 32 to 128 in lines of 16
+	int counter = 0;
+	for (int x = 32; x <= 128; x++)
+	{
+			cout << char(x) << " ";
+			counter++;
+
+			if (counter == 16)
+			{
+				counter = 0;
+				cout << endl;
+			}
+	}
+	cout << endl << "------------------------------------------------------------------------------------------------------------------------";
+
+
+	//Converts KPH to MPH
+	double km = 0, miles = 0;
+	for (km = 40; km <= 120; km += 10)
+	{
+		miles = km * 0.6214;
+		cout << km << " KPH  "; 
+		cout << miles << "  MPH" << endl;
+	}
+	cout << endl << "------------------------------------------------------------------------------------------------------------------------";
+
+
+	//Find salary per days of work where you get 1 penny the first day and 2 pennies the second day and so on
+	int days = -1;
+	double salary = 0.0, pay =.01;
+	while (days > 31 || days < 0)
+	{
+		cout << "How many days did you work this month?" << endl;
+		cin >> days;
+	}
+
+	for (int d = 1; d <= days; d++)
+	{	
+		salary += pay;
+		pay = pay * 2;
+		printf("%d\t$%.2f\n",d,pay);
+	}
+	
+	cout << fixed << setprecision(2) << "You earned $" << salary << " this month"<< endl;
+	cout << endl <<  "------------------------------------------------------------------------------------------------------------------------";
+
+	// Increase membership fee by 3% each year for 5 years
+	double fee = 3000.00;
+	for (int m = 1; m <= 5; m++)
+	{
+		cout << "In year " << m << " you will pay $" << fixed << setprecision(2) << fee << endl;
+		fee += (fee * 1.03);
+	}
+	cout << endl << "------------------------------------------------------------------------------------------------------------------------";
+
+	// Random number guessing game
+	srand(time(NULL));
+
+	int num = (rand() % 100) + 1, guess= -1;
+
+	cout << "Guess a random number between 1 and 100" << endl;
+	while (num != guess)
+	{
+		cout << "What is your guess?" << endl;
+		cin >> guess;
+
+		if (num > guess)
+		{
+			cout << "Your guess was too low!" << endl;
+		}
+		else if (num < guess)
+		{
+			cout << "Your guess was too high!" << endl;
+		}
+
+		else
+		{
+			cout << "You got it!" << endl;
+		}
+	}
+	cout << endl << "------------------------------------------------------------------------------------------------------------------------";
+
+	// User picks num, computer guesses
+
+	srand(time(NULL));
+
+	int high = 100, low = 1, mid, number =0;
+
+	cout << "pick a random number between 1 and 100" << endl;
+	string gotIt = " ";
+
+
+	while (gotIt != "Yes" || gotIt != "yes") {
+		mid = (high + low) / 2;
+		cout << "Is it " << mid << "?" << endl;
+		cin >> gotIt;
+
+		if (gotIt != "Yes" || gotIt != "yes")
+		{
+			string highLow;
+			cout << "Is it higher or lower?" << endl;
+			cin >> highLow;
+
+			if (highLow == "higher")
+			{
+				low = mid;
+			}
+			else if (highLow == "lower")
+			{
+				high = mid;
+			}
+		}
+	}
+
+
+
+}
+

@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+class circle {
+private:
+	double radius;
+
+public:
+	// Constructor
+	circle(double radius)
+	{
+		if (radius < 0)
+		{
+			this->radius = 1;
+		}
+		else
+		{
+			this->radius = radius;
+		}
+	}
+
+	void setRadius(double radius) 
+	{
+		this->radius = radius;
+	}
+
+	double getRadius()
+	{
+		return radius;
+	}
+	double getArea()
+	{
+		return radius * radius * 3.14;
+	}
+};
+
+int main()
+{
+
+	circle c(90);
+	c.setRadius(85);
+	cout << c.getRadius();
+	cout << c.getArea();
+}
+

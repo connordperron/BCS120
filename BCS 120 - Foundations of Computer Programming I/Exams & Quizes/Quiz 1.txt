@@ -1,0 +1,71 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include<time.h>
+using namespace std; 
+
+
+int main()
+{
+	//1.    
+	double F, C;
+	cout << "What is the temperature in Fahrenheit?" << endl;
+	cin >> F;
+	C = (5.0 / 9) * (F - 32.0);
+	cout << "The temperature in celsius is " << C << endl;
+
+	//2. 	
+	int POWERTEST;
+	POWERTEST = pow(2, 20);
+
+
+	//3. 	
+	double test1 = 97.0, test2 = 90.102, test3 = 87.55, average;
+	average = (test1 + test2 + test3) / 3;
+	cout << "The average of your exams is " << fixed << setprecision(2) << average << endl;
+
+	//4. 	
+	int choice;
+	cout << "Please enter 1 or 2." << endl;
+	cin >> choice;
+
+	if (choice == 1)
+	{
+		cout << "Surprise!" << endl;
+	}
+	else if (choice == 2)
+	{
+		cout << "Zoom, zoom, zoom!" << endl;
+	}
+	else
+	{
+		cout << "You did not enter 1 or 2" << endl;
+	}
+
+
+	//5. 	
+	string Name;
+	int age;
+	cout << "What is your full name?" << endl;
+	cin >> ws;
+	getline(cin,Name);
+
+	cout << "What is your age?" << endl;
+	cin >> age;
+
+	cout << "Your name is " << Name << " and you are " << ((((age * 365) * 24) * 60) * 60) << " seconds old" << endl;
+
+	//6. 	
+	double num = 9876.4321;
+	cout << fixed << setprecision(3) << num << endl;
+
+	//7. 
+	srand(time(NULL));
+	int ran = rand() % 26 + 25;
+	cout << ran << endl;
+
+	//8. 
+	double randomNum = rand() / 100;
+	cout << fixed << setprecision(2) << randomNum;
+}
+

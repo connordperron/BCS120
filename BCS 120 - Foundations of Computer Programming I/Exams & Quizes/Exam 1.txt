@@ -1,0 +1,220 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    // Question 1
+	int favNum = -1;
+	cout << "What is your favorite number between 1 and 100?" << endl;
+	cin >> favNum;
+
+	if (favNum >= 2 && favNum <= 13)
+	{
+		cout << "Nice." << endl;
+	}
+	else if (favNum >= 21 && favNum <= 84)
+	{
+		cout << "Not bad" << endl;
+	}
+	else if (favNum >= 85 && favNum <= 99)
+	{
+		cout << "Great" << endl;
+	}
+	else
+	{
+		cout << "Too bad" << endl;
+	}
+
+	// Question 2
+	srand(time(NULL));
+
+	int random = (rand()%200)+1;
+	int guess;
+
+	cout << "Guess the random number between 1 and 200" << endl;
+	cin >> guess;
+	if (random == guess)
+	{
+		cout << "Shrubbery" << endl;
+	}
+	else
+	{
+		cout << "Piccadilly" << endl;
+	}
+
+	// Question 3
+	int rando = (rand() % 6) + 1;
+	if (rando == 1 || rando == 3 || rando == 5)
+	{
+		cout << "Amazing" << endl;
+	}
+	else if (rando == 2 || rando == 4|| rando == 6)
+	{
+		cout << "Wonderful" << endl;
+	}
+
+	// Question 4
+	int lowNumber = -1, highNumber = -1, sum = 0;
+
+	cout << "Please input low number" << endl;
+	cin >> lowNumber;
+
+	cout << "Please input high number" << endl;
+	cin >> highNumber;
+
+	for (int x = lowNumber; x <= highNumber; x++)
+	{
+		sum = x + sum;
+	}
+	cout << sum << endl;
+
+	// Question 5
+	int age = -1; 
+	for (int tries = 3; tries > 0; tries--)
+	{
+		cout << "What is your age?" << endl;
+		cin >> age;
+
+		if (age > 100 || age < 1)
+		{
+			cout << "Fail" << endl;
+		}
+		else
+		{
+			cout << "Success" << endl;
+			break;
+		}
+	}
+
+	// Question 6
+	int EvenOdd = -1;
+	cout << "Give me a number" << endl;
+	cin >> EvenOdd;
+
+	if (EvenOdd % 2 == 0)
+	{
+		cout << "Even" << endl;
+	}
+	else
+	{
+		cout << "Odd" << endl;
+	}
+
+	// Question 7
+	int neg = 0, tries = 2;
+	while (tries > 0)
+	{
+		cout << "Please give me a negative number" << endl;
+		cin >> neg;
+		if (neg < 0)
+		{
+			cout << neg * -1 << endl;
+			break;
+		}
+		tries--;
+	}
+
+	// Question 8
+	int w1 = -1, l1 = -1, w2 = -1, l2 = -1, a1 = -1, a2 = -1;
+	cout << "What is the first rectangle's width?" << endl;
+	cin >> w1;
+	cout << "What is the first rectangle's length?" << endl;
+	cin >> l1;
+	cout << "What is the second rectangle's width?" << endl;
+	cin >> w2;
+	cout << "What is the second rectangle's length?" << endl;
+	cin >> l2;
+	a1 = w1 * l1;
+	a2 = w2 * l2;
+
+	if (a1 > a2)
+	{
+		cout << "The first rectangle's area is " << a1 << endl;
+	}
+	else if (a2 > a1)
+	{
+		cout << "The second rectangle's area is " << a2 << endl;
+	}
+	else
+	{
+		cout << "They are equal" << endl;
+	}
+
+	// Question 9
+	int num1=-1, num2=-1, num3 =-1;
+	cout << "What is num1?" << endl;
+	cin >> num1;
+	cout << "What is num2?" << endl;
+	cin >> num2;
+	num3 = num1 + num2;
+
+	for (int x = 1; x <= 10; x++)
+	{
+		if (x == 1)
+		{
+			cout << num1 << ", ";
+		}
+		else if (x == 2)
+		{
+			cout << num2 << ", ";
+		}
+		else
+		{
+			num3 = num1 + num2;
+			cout << num3 << ", ";
+			num1 = num2;
+			num2 = num3;
+		}
+	}
+	cout << endl;
+
+	// Question 10
+	for (int x = 1; x <= 14; x++)
+	{
+		cout << pow(x, 2) << ", ";
+	}
+	cout << endl;
+
+	// Question 11
+	double ab = 1.50, bb = .75, ao = 2.14, bo = 1.25, total=0.00, tax = 1.075;
+	int qty =-1;
+	string choice = "";
+
+	cout << "MENU: \n BRAND A BLACK: $1.50 \n BRAND A ORANGE: $2.14 \n BRAND B BLACK: $.75 \n BRAND B ORANGE: $1.25 " << endl;
+	cout << "What would you like? \n (FOR BRAND A BLACK PLEASE ENTER: ab) \n (FOR BRAND A ORANGE PLEASE ENTER: ao) \n (FOR BRAND B BLACK PLEASE ENTER: bb) \n (FOR BRAND B ORANGE PLEASE ENTER: bo)" << endl;
+	cin >> choice;
+	cout << "How many would you like?" << endl;
+	cin >> qty;
+
+	if (choice == "ab")
+	{
+		total = ab * qty;
+	}
+	else if (choice == "ao")
+	{
+		total = ao * qty;
+	}
+	else if (choice == "bb")
+	{
+		total = bb * qty;
+	}
+	else if (choice == "bo")
+	{
+		total = bo * qty;
+	}
+
+	if (qty > 10)
+	{
+		total = total * .95;
+	}
+
+	total = total* tax;
+
+	cout << "You owe us $" << fixed << setprecision(2) << total << endl;
+
+}
+

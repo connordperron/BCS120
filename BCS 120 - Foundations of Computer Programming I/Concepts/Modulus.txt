@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+	int x = 7; 
+	cout << 7 % 2 << endl;
+	cout << 7 % 3 << endl;
+	cout << 7 % 5 << endl;
+	cout << 7 % 1 << endl;
+
+
+	int change = 67;
+	int quarters = change / 25;
+	int leftover = change % 25;
+
+	int dimes = leftover / 10;
+	leftover = leftover % 10;
+
+	int nickles = leftover / 5;
+	leftover = leftover % 5;
+
+	int pennies = leftover;
+
+
+	cout << "You have " << quarters << " quarters, " << dimes << " dimes, "<< nickles << " nickles and " << pennies << " pennies.";
+}

@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+
+
+int main()
+{
+	/* 
+	int x = 6;
+	double decimal = 3.05;
+	char letter = 'a';
+	string word = "This is word!";
+	float f = 10000.0001f;
+	long wholeNumber = 123456789L;
+	long long really_long_number = 987654321;
+	bool yes_no = true;
+	*/
+
+	/* 
+	double a = 3;
+	double b = -4;
+	double c = 1.234;
+	double d = -.00000111;
+	double e = 12.34e6;
+	cout << a << "\t" << b << "\t" << c << "\t" << d << "\t" << e << endl;
+	*/
+
+	/*
+	double a = 3, b = 4, c;
+	c = sqrt(pow(a, 2) + pow(b, 2));
+	cout << "The answer is " << c << endl;
+
+	double alt = pow(a * a + b * b, .5);
+	cout << "The alternative answer is " << alt << endl;
+	*/
+
+	int favoriteNumber;
+	cout << "What is your favorite number? \n";
+	cin >> favoriteNumber;
+
+	cout << "It seems that your favorite number is " << favoriteNumber << endl;
+
+	string name;
+	cout << " \n What is your name? \n";
+	cin >> name;
+	cout << "Hello " << name << endl;
+}

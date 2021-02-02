@@ -1,0 +1,117 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    //Question 1: Create a variable to hold the date, ask the user for it and store it in the created variable called DATE.
+    string DATE;
+
+    cout << "What is the date? \n";
+    getline(cin, DATE);
+    cout << "The date is " << DATE << endl;
+
+    //Question 2:  Ask the user for the temperature in Celsius, store the result in a variable called CELSIUS. Use the formula (9/5)*CELSIUS+32 to get the Fahrenheit temperature and store is in a variable called FAHRENHEIT.
+    double CELSIUS, FAHRENHEIT;
+    cout << "What is the temperature in celsius? \n";
+    cin >> CELSIUS;
+
+    FAHRENHEIT = ((9.0 / 5.0) * CELSIUS) + 32;
+
+    cout << "The temperature in fahrenheit is " << FAHRENHEIT << endl;
+
+    // Question 3: Find the value of 2^8 and store it in a variable called POWERTEST.
+    int POWERTEST = pow(2, 8);
+    cout << "2 to the 8th power is " << POWERTEST << endl;
+
+    //Question 4: Let test1 = 97 and test2 = 90.102 and find the average, store it in a variable called AVERAGE, output it correctly to two decimal places.
+    double test1 = 97, test2 = 90.102, AVERAGE;
+    AVERAGE = (test1 + test2) / 2;
+
+    cout << "The average of your two tests is " << fixed << setprecision(2) << AVERAGE << endl;
+
+    //Question 5: If A = 4 and B = 3 use the formula to find C (the hypotenuse of the triangle).
+    int A = 4, B = 3, C;
+    C = pow(A, 2) + pow(B, 2);
+    C = pow(C, 2);
+
+    cout << "The hypotenuse of the triangle is " << C << endl;
+
+    //Question 6: Ask the user to choose 1 or 2, if they say one, output "Hello", if they say 2, output "Good-Bye"
+    int choice;
+
+    cout << "Enter either 1 or 2 as an integer \n";
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        cout << "Hello \n";
+    }
+    else if (choice == 2)
+    {
+        cout << "Good-Bye \n";
+    }
+    else
+    {
+        cout << "You did not enter 1 or 2 as an integer \n";
+    }
+
+    //Question 7: Ask the user for a number, if it is greater than 10 output the log of the number, if it less than 10 output 2*log(number).
+    int num;
+    cout << "Please enter a number \n";
+    cin >> num;
+
+    if (num > 10)
+    {
+        cout << log(num) << endl;
+    }
+    else if (num < 10)
+    {
+        cout << 2 * log(num) << endl;
+    }
+    else
+    {
+        cout << "You entered 10 \n";
+    }
+
+
+    // Question 8: Ask the user for their full name; store it in a variable called FULLNAME
+    string FULLNAME;
+
+    cout << "What is your full name? \n";
+    cin >> ws;
+    getline(cin, FULLNAME);
+    
+    cout << "Your name is " << FULLNAME << endl;
+
+
+    // Question 9: Ask the user for their name and age, output their name and age in one line.
+
+    string name;
+    int age;
+
+    cout << "What is your name? \n";
+    getline(cin, name);
+
+    cout << "What is your age? \n";
+    cin >> age;
+
+    cout << "Your name is " << name << " and you are " << age << " years old." << endl;
+
+    // Question 10: Ask the user for their favorite letter, output one letter past that (so if they tell you 'b', you should output 'c').
+    char favLetter, nextLetter;
+    cout << "What is your favorite letter? \n";
+    cin >> favLetter;
+
+    nextLetter = favLetter + 1;
+
+    cout << "After " << favLetter << " comes " << nextLetter << endl;
+
+
+}

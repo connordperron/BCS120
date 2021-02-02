@@ -1,0 +1,75 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	for (int i = 1; i <= 10; i++)
+	{
+		cout << pow(i, 2) << " ";
+	}
+	cout << endl;
+
+	for (int i = 1; i <= 100; i++)
+	{
+		if (sqrt(i) == floor(sqrt(i)))
+		{
+			cout << i << " ";
+		}
+	}
+	cout << endl;
+
+	int total= 0;
+	for (int i = 1; i <= 20; i+=2)
+	{
+		total += i;
+		cout << total << " ";
+	}
+
+// is a running sum of ints
+	int total2= 0;
+	for (int j = 0; j < 10; j++)
+	{
+		total2 += j;
+		cout << total2 << " ";
+	}
+	cout << endl;
+
+// factorial function
+	int mult = 1;
+	for (int k = 1; k < 10; k++)
+	{
+		mult*=k;
+		cout << mult << " ";
+	}
+	cout << endl;
+
+// Factors of a number
+	int num = 15;
+	for (int i = 1; i <= num; i++)
+	{
+		if (num % i == 0)
+		{
+			cout << i << " ";
+		}
+	}
+	cout << endl;
+
+// Find prime number
+	int val = 17;
+	bool isPrime = true;
+	for (int div = 2; div < val; div++)
+	{
+		if (val % div == 0)
+		{
+			isPrime = false;
+			break;
+		}
+	}
+	cout << (isPrime ? "Prime" : "Not Prime") << endl;
+}
+}
+
+

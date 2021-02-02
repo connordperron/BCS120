@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	string word = "Thank you", input = "";
+
+	while (word != input)
+	{
+		cout << "Pwease say \"Thank you\" OwO" << endl;
+		getline(cin, input);
+	}
+
+	string wrd = "Please", val = "";
+	for (; ; )
+	{
+		cout << "Pwease say \"Please\" UwU" << endl;
+		getline(cin, val);
+		if (wrd == val)
+		{
+			break;
+		}
+	}
+}

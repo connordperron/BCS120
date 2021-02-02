@@ -1,0 +1,10 @@
+1. Create a function called getName that takes in no arguments and returns the name of
+the user.
+2. Create a function called getAge that takes in the argument age and uses pass-byreference to set the age of the user. Ensure that the user cannot put in an age that is
+negative or greater than 100.
+3. Create a function called printTicket that takes in the user's name and age and does the
+following
+? If they are less than or equal to 13 years old set ticket_Price to 9.99.
+? If their age is greater than 13 and less than 65, set ticket_Price to 19.99.
+? If their age is greater than or equal to 65, set ticket_Price to 12.99.
+? Output to the console the user's name, age and ticket price.

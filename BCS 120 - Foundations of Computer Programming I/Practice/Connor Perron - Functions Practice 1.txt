@@ -1,0 +1,123 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+void Alpha();
+void Beta();
+void Gamma();
+int Delta();
+int Bravo(int input);
+string Charlie(string name);
+double Echo(int num1, int num2, int num3);
+int absoluteValue(int number);
+int Foxtrot(double in);
+string Golf(int evenOdd);
+
+int main()
+{
+    Alpha(); cout << endl;
+    Beta(); cout << endl;
+    Gamma(); cout << endl;
+    cout << Delta(); cout << endl;
+    int num; cout << "Please input a number" << endl; cin >> num; cout << Bravo(num); cout << endl;
+    string name; cout << "What is your name?" << endl; cin >> name; cout << Charlie(name); cout << endl;
+    int a, b, c; cout << "Please input 3 numbers" << endl; cin >> a; cin >> b; cin >> c; cout << Echo(a, b, c); cout << endl;
+    int number; cout << "Please input a number" << endl; cin >> number; cout << absoluteValue(number); cout << endl;
+    double input; cout << "Please input a double" << endl; cin >> input; cout << Foxtrot(input); cout << endl;
+    int y; cout << "Please input a number" << endl; cin >> y; cout << Golf(y); cout << endl;
+   
+}
+
+
+//1. Create a while loop that counts from 10 to - 10 using a function named Alpha(it should be a void).
+void Alpha()
+{
+    int x = 10;
+    while (x >= -10)
+    {
+        cout << x << ", ";
+        x--;
+    }
+}
+
+//2. Create a for loop that outputs the cube root of the numbers 5 to 20 inside a function named Beta(it should be a void).
+void Beta()
+{
+    for (int y = 5; y <= 20; y++)
+        cout << cbrt(y) << ", ";
+}
+
+//3. Create a for loop that outputs 20 random numbers between 0 and 1 inside a function named Gamma(it should be a void) .
+void Gamma()
+{
+    srand(time(nullptr));
+    for (int x = 0; x < 20; x++)
+    {
+        double g = (rand() % 10000) / 10000.0;
+        cout << g << ",";
+    }
+}
+
+//4. Use a while loop to ask the user for their age until they give an age between 0 and 100 inside a function named Delta(it should return the age).
+int Delta()
+{
+    bool loop = true;
+    int age = -1;
+    while (loop)
+    {
+        cout << "What is your age?" << endl;
+        cin >> age;
+
+        if (age < 100 && age > 1)
+        {
+            return age;
+            break;
+        }
+
+    }
+}
+
+//5. Create a function named Bravo that takes in a number and returns 10 times that number
+int Bravo(int input)
+{
+    return input * 10;
+}
+
+//6. Create a function named Charlie that takes in a name and outputs Hello to the person using their name
+string Charlie(string name)
+{
+    name = "Hello " + name;
+    return name;
+}
+
+//7. Create a function named Echo that takes in three numbers and returns the average of those numbers
+double Echo(int num1, int num2, int num3)
+{
+    return (num1 + num2 + num3) / 3;
+}
+
+//8. Create a function named absoluteValue that takes in a number and returns the absolute value of it(e.g. if it takes in 5 or -5 it will return 5)
+int absoluteValue(int number)
+{
+    return abs(number);
+}
+
+//9. Create a function named Foxtrot that takes in a doubleand returns the integer part(e.g. if it takes in 2.15 it returns 2)
+int Foxtrot(double in)
+{
+    return (int);
+}
+
+//10. Create a function named Golf that takes in a number and returns the words "even" or "odd" based on what it is.
+string Golf(int evenOdd)
+{
+    if (evenOdd % 2 == 0)
+        return "Even";
+
+    else
+        return "Odd";
+}

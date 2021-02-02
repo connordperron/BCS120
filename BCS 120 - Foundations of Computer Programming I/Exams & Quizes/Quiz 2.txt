@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+void alpha();
+int bravo(int num1, int num2, int num3, int num4, int num5);
+int charlie(int age);
+int delta(int x, int y);
+
+
+int main()
+{
+	int age, x, y;
+	alpha();
+	int num1 = 1, num2 = 2, num3 = 3, num4 = 4, num5 = 5;
+	cout << bravo(num1, num2, num3, num4, num5) << endl;
+	cout << "How old are you?" << endl;
+	cin >> age;
+	cout << charlie(age) << endl;
+	cout << "Please enter the lower number" << endl;
+	cin >> x;
+	cout << "Please enter the higher number" << endl;
+	cin >> y;
+	delta(x, y);
+}
+
+void alpha()
+{
+	string name;
+	cout << "What is your name?" << endl;
+	cin >> name;
+
+	cout << "It is a pleasure to meet you, " << name << endl;
+}
+
+int bravo(int num1, int num2, int num3, int num4, int num5)
+{
+	int avg = (num1 + num2 + num3 + num4 + num5) / 5;
+	return avg;
+}
+
+int charlie(int age)
+{
+	if (age > 100 || age < 1)
+		age = 0;
+
+	return age;
+}
+
+int delta(int x, int y)
+{
+	int total = 0;
+	for (int i = x; i <= y; i++)
+	{
+		total += i;
+		cout << total << "\t";
+	}
+
+	return total;
+}

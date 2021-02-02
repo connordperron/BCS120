@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+
+using namespace std;
+
+int main() 
+{
+  double x = 123.456;
+  double y = 987.654;
+  cout << setw (20)<< left << x << y << endl;
+  cout << scientific << x << endl;
+  cout << fixed << x << endl; //shows with all decimal places
+  cout << fixed << setprecision(2) << "$" << x << endl;
+
+  printf("The number is: %.2f", x);
+}

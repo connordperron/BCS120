@@ -1,0 +1,8 @@
+Ask the user for the temperature in Fahrenheit, store the result in a variable called F. Use the formula (5/9)*Fahrenheit-32 to get the Celsius temperature and store is in a variable called C.
+Find the value of 2^20 and store it in a variable called POWERTEST.
+Let test1 = 97, test2 = 90.102, and test 3 = 87.55. Find the average, store it in a variable called AVERAGE, output it correctly to two decimal places
+Ask the user to choose 1 or 2, if they say one, output "Surprise!", if they say 2, output "Zoom, zoom, zoom!"
+Ask the user for their full name and age; store their name in a variable called Name and store their age in a variable called Age. Output their name and age in seconds. 
+Output the number 9876.4321 to three decimals
+Create a random number between 25 and 50
+Create a random decimal number with 2 or more decimals

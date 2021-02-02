@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+//	Create a while loop that outputs the numbers from 20 to 60.
+	int x = 20;
+	while (x <= 60)
+	{
+		cout << x << ", ";
+		x++;
+	}
+
+	cout << endl;
+	cout << endl;
+
+//	Create a while loop that outputs the numbers from 60 to 20.
+	int i = 60;
+	while (i >= 20)
+	{
+		cout << i << ", ";
+		i--;
+	}
+
+	cout << endl;
+	cout << endl;
+
+
+//	Do the same for as question 2 with a for loop.
+	for (int x = 60; x >= 20; x--)
+	{
+		cout << x << ", ";
+	}
+
+	cout << endl;
+	cout << endl;
+
+//	Adam and Peter both like to count things.Adam likes to count numbers divisible by 7. Peter likes to count numbers that add to 7 (e.g. 7, 16, 25, etc.).Output all the numbers that Adam and Peter like to count.
+
+	int counter = 0;
+	cout << "The numbers Adam likes are: ";
+	for (int x = 0; counter < 100; x ++)
+	{
+		if (x % 7 == 0)
+		{
+			cout << x << ", ";
+			counter++;
+		}
+	}
+	cout << endl;
+	cout << endl;
+
+	cout << "The numbers Peter likes are: ";
+	for (int num1 = 0; num1 < 10; num1++)
+	{
+		for (int num2 = 0; num2 < 10; num2++)
+		{
+			if (num1 + num2 == 7)
+				cout << num1 << num2 << ", ";
+		}
+	}
+}

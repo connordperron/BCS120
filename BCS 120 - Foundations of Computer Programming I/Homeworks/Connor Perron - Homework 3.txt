@@ -1,0 +1,134 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	//1. Create a while loop that counts even numbers from 2 to 10
+
+	int x = 2;
+	cout << x << " ";
+	while (x < 10)
+	{
+		x = x + 2;
+		cout << x << " ";
+	}
+	cout << endl;
+
+	//2. Create a for loop that counts by five(i.e. 0, 5, 10, ...) from 0 to 100
+	for (int f = 0; f < 101; f = f + 5)
+	{
+		cout << f << " ";
+	}
+	cout << endl;
+
+	//3. Ask for a person's age and give them three tries to give you a correct age (between 0 and 100)
+	int tries = 1, age = -1;
+	while (tries < 4)
+	{
+		cout << "This is try " << tries << endl;
+		cout << "What is your age?" << endl;
+		cin >> age;
+		if (age > 0 && age <= 100)
+			break;
+		else
+			tries++;
+	}
+
+	//4. Use a for loop to list Celsius and Fahrenheit temperatures.The "C" should be from - 20 to 20 and the F should be shown correspondingly(F = (9 / 5) * C + 32).
+	double f = -1;
+	for (int c = -20; c <= 20; c++)
+	{
+		cout << "The temperature in celsius is " << c << " degrees. ";
+		f = (9 / 5.0) * c + 32;
+		cout << "The temperature in fahrenheit is " << f << " degrees." << endl;
+	}
+
+	//5. The Fibonacci numbers are 1, 1, 2, 3, 5, 8, 13, 21, etc.Use a for loop to list the first 20 Fibonacci numbers
+	int a = 1, b = 0, c = 0;
+	for (int x = 1; x < 20; x++)
+	{
+		if (x == 1)
+		{
+			cout << "0" << ", ";
+			cout << a << ", ";
+		}
+
+		else
+		{
+			c = b;
+			b = a;
+			a = b + c;
+			cout << ", " << endl;
+		}
+	}
+
+
+	//6. Create a triangle using 2 for loops and the "*".
+	int n = 5;
+	for (int outer = 0; outer < n; outer++)
+	{
+
+		for (int spaces = n - outer; spaces > 1; spaces--)
+		{
+			cout << " ";
+		}
+
+		for (int inner = 0; inner <= outer; inner++)
+		{
+			cout << "* ";
+		}
+		cout << endl;
+	}
+
+	//7. Check if a number is prime.
+	int val = 17;
+	bool isPrime = true;
+	for (int div = 2; div < val; div++)
+	{
+		if (val % div == 0)
+		{
+			isPrime = false;
+			break;
+		}
+	}
+	cout << val << " is ";
+	cout << (isPrime ? "prime." : "not prime.") << endl;
+
+
+	//8. Output a list of numbers from 100 to 1 (using a for loop) to a file
+	ofstream output;
+	output.open("Homework3.txt");
+	for (int y = 100; y > 0; y--)
+	{
+		output << y << endl;
+	}
+	output.close();
+
+	//9. Use a loop to output all the squares(i.e. 1, 4, 9, 16, etc) up until 196 to a file
+	ofstream output1;
+	output1.open("Homework3B.txt");
+	for (int s = 1; s <= 14; s++)
+	{
+		output1 << pow(s, 2) << endl;
+	}
+	output.close();
+
+	//10. Take a number such as 47321 and output it backwards to get 12374
+	int num = 47321;
+	cout << num << " backwards is ";
+	while (num > 0)
+	{
+		cout << num % 10;
+		num = num / 10;
+	}
+
+
+}

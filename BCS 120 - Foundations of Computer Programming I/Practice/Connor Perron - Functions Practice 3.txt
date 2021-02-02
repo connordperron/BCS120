@@ -1,0 +1,171 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+void counter();
+int adder(int start, int finish);
+int timesTen(int input);
+void swapper(int& inputX, int& inputY);
+int max(int num1, int num2);
+int min(int num1, int num2);
+double average(int num1, int num2, int num3);
+string concatenate(string s1, string s2);
+string numberConcatenator(int num1, int num2);
+int ROLL();
+bool snakeEyes();
+int ctr;
+
+int main()
+{
+	srand(time(nullptr));
+	counter();
+	cout << adder(1, 10);
+	cout << endl;
+	for (int i = 1; i <= 25; i++)
+	{
+		cout << timesTen(i) << ", ";
+	}
+	cout << endl;
+	int inputX = 1, inputY = 2;
+	cout << inputX << ", " << inputY<< endl;
+	swapper(inputX, inputY);
+	cout << inputX << ", " << inputY;
+	cout << endl;
+	cout << max(10, 100);
+	cout << endl;
+	cout << min(10, 100);
+	cout << endl;
+	cout << average(2, 3, 2);
+	cout << endl;
+	cout << concatenate("hot", "dog");
+	cout << endl;
+	cout << numberConcatenator(1, 5);
+	cout << endl;
+	while(!snakeEyes());
+
+
+}
+
+// 1. Ask the user for a number Xand then display the numbers 1 through 10, X times.
+void counter()
+{
+	int x = -1;
+	cout << "How many times would you like me to count? " << endl;
+	cin >> x;
+	for (int y = 0; y < x; y++)
+	{
+		for (int i = 1; i <= 10; i++)
+			cout << i << ", ";
+		cout << endl;
+	}
+
+}
+
+// 2. Create a function that adds together all the numbers between startand finish.For instance, if it takes in start = 20 and finish = 22. It should return 20 + 21 + 22.
+int adder(int start, int finish)
+{
+	int total = 0;
+	for (start; start <= finish; start++)
+	{
+		total = total + start;
+	}
+	return total;
+}
+
+// 3. Create a void function that outputs the 10 times whatever the input was. Call this function in a for loop 25 times, pass in "i" each time.
+int timesTen(int input)
+{
+	return input * 10;
+}
+
+// 4. Create a function that swaps the values of the two inputs; it should do so as a pass by reference
+void swapper(int &inputX, int &inputY)
+{
+	int buffer = inputX;
+	inputX = inputY;
+	inputY = buffer;
+}
+
+// 5. Create a function that returns the max of two numbers.
+int max(int num1, int num2)
+{
+	if (num1 > num2)
+	{
+		return num1;
+	}
+	else if (num1 < num2)
+	{
+		return num2;
+	}
+
+	else
+	{
+		return -1;
+	}
+}
+
+// 6. Create a function that returns the min of two numbers.
+int min(int num1, int num2)
+{
+	if (num1 < num2)
+	{
+		return num1;
+	}
+	else if (num1 > num2)
+	{
+		return num2;
+	}
+
+	else
+	{
+		return -1;
+	}
+}
+
+
+// 7. Create a function that takes in three numbers and returns the average of the three numbers.
+double average(int num1, int num2, int num3)
+{
+	return (num1 + num2 + num3) / 3.0;
+}
+
+
+// 8. Create a function that takes in two strings and returns them concatenated. (e.g.hot and dog would return hotdog)
+string concatenate(string s1, string s2)
+{
+	return s1 + s2;
+}
+
+// 9. Create a function that takes in two numbers and returns them concatenated(e.g. 1 and 5 would return 15)
+string numberConcatenator(int num1, int num2)
+{
+	string n1 = to_string(num1);
+	string n2 = to_string(num2);
+	return n1 + n2;
+}
+
+// 10. Create a function that rolls a dice named ROLL.It should create a random number between 1 and 6. Create another function that rolls two dice and says SNAKE EYES if you both rolls are a 1. Call these functions until you get snake eyes.Count how many times this happens. (Suggested to use a "static" variable for counting.)
+int ROLL()
+{
+	return (rand() % 6) + 1;
+}
+
+bool snakeEyes()
+{
+	static int ctr = 0;
+	counter++;
+	int roll1 = ROLL();
+	int roll2 = ROLL();
+	counter++;
+	cout << "Dice 1 : " << roll1 << " Dice 2: " << roll2 << endl;
+	if (roll1 == 1 && roll2 == 1)
+		{
+			cout << "SNAKE EYES! " << endl << "It took " << ctr << " tries!" << endl;
+			return true;
+		}
+	else return false;
+}

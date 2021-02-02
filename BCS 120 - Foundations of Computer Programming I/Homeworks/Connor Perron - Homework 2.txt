@@ -1,0 +1,161 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+#include <iomanip>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <fstream>
+
+
+using namespace std;
+
+int main()
+{
+	// 1. Ask the user for their favorite color.Create a variable named COLOR to store it.If they choose blue, output "Great choice."; if they choose red, output "Poor choice"; if they choose green, output "Not a bad choice."; if they choose anything else, say "Sorry, that's not a primary number." (Use an if / else - if / else statement).
+	string COLOR;
+	cout << "What is your favorite color?" << endl;
+	cin >> COLOR;
+
+	if (COLOR == "blue" || COLOR == "Blue")
+	{
+		cout << "Great choice." << endl;
+	}
+	else if (COLOR == "red" || COLOR == "Red")
+	{
+		cout << "Poor choice.";
+	}
+	else if (COLOR == "green" || COLOR == "Green")
+	{
+		cout << "Not a bad choice." << endl;
+	}
+	else
+	{
+		cout << "Sorry, that's not a primary color." << endl;
+	}
+
+	//2. Create a random number between 1 and 100.  If it is less than 50 output "you chose a number less than 50." if it is more than 50, output "you chose a number more than 50."
+	srand(time(NULL));
+
+	double x = (rand() % 100) + 1;
+
+	if (x < 50)
+	{
+		cout << x << " is less than 50" << endl;
+	}
+	else if (x > 50)
+	{
+		cout << x << " is greater than 50" << endl;
+	}
+	else
+	{
+		cout << "You chose 50" << endl;
+	}
+
+	//3. Create a random number between 1 and 6. If it is even, output to a file the number and "it is even"; if it is odd, output to a file the numberand "it is odd".
+	int y = (rand() % 5) + 1;
+	string val = (y % 2 == 0 ? "even" : "odd");
+
+
+
+
+
+	//4. Create 2 random numbers between 1 and 6. If when the two numbers are added together their sum is less than 5 or greater than 12, output to the console : "you win"
+	int r1 = (rand() % 5) + 1;
+	int r2 = (rand() % 5) + 1;
+
+	if ((r1 + r2) < 5 || (r1 + r2) > 12)
+	{
+		cout << "You win!";
+	}
+	else
+	{
+		cout << "You lose :(" << endl;
+	}
+
+
+
+	//5. Use the conditional operator for this problem.PAY_RATE is 50. Let the user put in their HOURS_WORKED. if the hours worked is greater than 10, output to a file the pay(pay_rate * hours_worked) otherwise output 0.
+	int PAY_RATE = 50;
+	double HOURS_WORKED, PAY;
+
+	cout << "How many hours did you work?" << endl;
+	cin >> HOURS_WORKED;
+	PAY = (HOURS_WORKED * PAY_RATE);
+	ofstream output;
+	output.open("HomeworkA.txt");
+	output << (HOURS_WORKED > 10 ? PAY : 0) << endl;
+	output.close();
+
+
+
+	//6. Create a random number between 50 and 100.  If the number is between 50 - 70 output "C"; if it is between 70 - 90 output "B", otherwise output "A".
+	int z = rand() % 51 + 50;
+
+	if (z > 50 && z < 70)
+	{
+		cout << "C" << endl;
+	}
+	else if (z > 70 && z < 90)
+	{
+		cout << "B" << endl;
+	}
+	else
+	{
+		cout << "A" << endl;
+	}
+
+
+
+	//7. Ask the user for an 'a' or 'b'.Output to a file their letter.
+	char choice;
+	cout << "Please choose either a or b"<< endl;
+	cin >> choice;
+
+	ofstream output1;
+	output1.open("HomeworkB.txt");
+	output1 << choice << endl;
+	output1.close();
+
+
+	//8. Ask the user for the length and width of two rectangles. Tell the user the area of the rectangle with the greater width.
+	int Rect1W = 0, Rect1L = 0, Rect2W = 0, Rect2L = 0;
+	cout << "What is the width of the first rectangle?" << endl;
+	cin >> Rect1W;
+	cout << "What is the length of the first rectangle?" << endl;
+	cin >> Rect1L;
+	cout << "What is the width of the second rectangle?" << endl;
+	cin >> Rect2W;
+	cout << "What is the length of the second rectangle?" << endl;
+	cin >> Rect2L;
+
+	if ((Rect1L * Rect1W) > (Rect2L * Rect2W))
+	{
+		cout << "The first rectangle was bigger with an area of " << (Rect1L * Rect1W) << endl;
+	}
+	else if ((Rect1L * Rect1W) < (Rect2L * Rect2W))
+	{
+		cout << "The second rectangle was bigger with an area of " << (Rect2L * Rect2W) << endl;
+	}
+
+
+	//9.   Ask the user for the length and width of two rectangles. Tell the user the area of the rectangle with the lesser width.
+	int RectW1 = 0, RectL1 = 0, RectW2 = 0, RectL2 = 0;
+	cout << "What is the width of the first rectangle?" << endl;
+	cin >> RectW1;
+	cout << "What is the length of the first rectangle?" << endl;
+	cin >> RectL1;
+	cout << "What is the width of the second rectangle?" << endl;
+	cin >> RectW2;
+	cout << "What is the length of the second rectangle?" << endl;
+	cin >> RectL2;
+
+	if ((RectL1 * RectW1) < (RectL2 * RectW2))
+	{
+		cout << "The first rectangle was smaller with an area of " << (RectL1 * RectW1) << endl;
+	}
+	else if ((RectL1 * RectW1) > (RectL2 * RectW2))
+	{
+		cout << "The second rectangle was smaller with an area of " << (RectL2 * RectW2) << endl;
+	}
+}
